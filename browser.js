@@ -1,0 +1,13 @@
+const puppeteer = require('puppeteer');
+
+async function startBrowser(){
+    let browser;
+    try{
+        console.log('Opening the browser...');
+        browser = await puppeteer.launch();
+    } catch (err) {
+        console.log(`Could not create a browser instance. Err: ${err}`)
+    }
+    return browser;
+}
+module.exports = { startBrowser };
