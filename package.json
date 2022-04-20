@@ -1,0 +1,22 @@
+{
+  "name": "skrapatian",
+  "version": "1.0.0",
+  "description": "This is a web scraping program that will get recipes from a specific website and return a shopping list as a json file.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jimmie-Rissanen/skrapatian.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jimmie-Rissanen/skrapatian/issues"
+  },
+  "homepage": "https://github.com/Jimmie-Rissanen/skrapatian#readme",
+  "dependencies": {
+    "puppeteer": "^13.6.0"
+  }
+}
