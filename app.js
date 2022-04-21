@@ -1,12 +1,7 @@
- const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer');
+const fs = require('fs');
 
- const urlList = ['https://undertian.com/recept/smakrik-kikartsgryta-pa-grillad-paprika-och-solroskarnor/',
-              'https://undertian.com/recept/pasta-med-ugnsgratinerad-fetaost-tomat-och-vita-bonor/',
-              'https://undertian.com/recept/burgare-med-vita-bonor-och-tomat/',
-              'https://undertian.com/recept/havrerisotto-med-pumpa-och-salvia/'
-              ];
-
-    const url = 'https://undertian.com/recept/havrerisotto-med-pumpa-och-salvia/';
+const url = 'https://undertian.com/recept/veganska-kottbullar-med-pasta-tomatsas/';
 
  async function scraper(url){
     const browser = await puppeteer.launch();
@@ -29,7 +24,12 @@
         return data;
     })
 
-    console.log(data)
+    fs.writeFile(`./shoppingList/data${Math.floor(Math.random()*100)}.json`, JSON.stringify(data), (err) => {
+        if(err){
+            console.log(err);
+        }
+        console.log('All good')
+    })
     await browser.close();
  }
 
